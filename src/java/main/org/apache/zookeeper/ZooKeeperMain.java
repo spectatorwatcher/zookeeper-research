@@ -65,6 +65,7 @@ import org.apache.zookeeper.cli.SetCommand;
 import org.apache.zookeeper.cli.SetQuotaCommand;
 import org.apache.zookeeper.cli.StatCommand;
 import org.apache.zookeeper.cli.SyncCommand;
+import org.apache.zookeeper.cli.TreeCommand;
 import org.apache.zookeeper.client.ZKClientConfig;
 import org.apache.zookeeper.admin.ZooKeeperAdmin;
 
@@ -119,6 +120,7 @@ public class ZooKeeperMain {
         new ReconfigCommand().addToMap(commandMapCli);
         new GetConfigCommand().addToMap(commandMapCli);
         new RemoveWatchesCommand().addToMap(commandMapCli);
+        new TreeCommand().addToMap(commandMapCli);
         
         // add all to commandMap
         for (Entry<String, CliCommand> entry : commandMapCli.entrySet()) {
@@ -658,4 +660,5 @@ public class ZooKeeperMain {
         }
         return watch;
     }
+
 }
